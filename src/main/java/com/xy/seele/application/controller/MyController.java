@@ -1,6 +1,8 @@
 package com.xy.seele.application.controller;
 
 import com.xy.seele.application.pojo.UserLogin;
+import com.xy.seele.application.util.IDUTILS;
+import com.xy.seele.application.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +42,10 @@ public class MyController {
     @RequestMapping("/RegisterSuccess")
     public String toRegisterSuccess(Model model, UserLogin userLogin) {
         //将账号密码加入到数据库中
+        userLogin.setId(IDUTILS.getId());
+        if(!StringUtils.isEmpty(userLogin.getPassword())){
+            userLogin.setKey("1");
+        }
         int add = userLoginServicesImpl.add(userLogin);
         System.out.println("数据插入成功！");
         model.addAttribute("data", "注册成功，请登录！");

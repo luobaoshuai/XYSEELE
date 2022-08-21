@@ -8,7 +8,7 @@
     </select>
 
     <insert id="add" parameterType="com.xy.seele.application.pojo.UserLogin">
-        insert into userLogin values (#{username},#{password})
+        insert into userLogin values (#{id},#{username},#{password},#{key},#{value})
     </insert>
 
     <select id="queryByName" resultType="com.xy.seele.application.pojo.UserLogin">
