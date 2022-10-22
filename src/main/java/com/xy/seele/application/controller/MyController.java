@@ -43,7 +43,7 @@ public class MyController {
     public String toRegisterSuccess(Model model, UserLogin userLogin) {
         //将账号密码加入到数据库中
         userLogin.setId(IDUTILS.getId());
-        if(!StringUtils.isEmpty(userLogin.getPassword())){
+        if (!StringUtils.isEmpty(userLogin.getPassword())) {
             userLogin.setKey("1");
         }
         int add = userLoginServicesImpl.add(userLogin);
