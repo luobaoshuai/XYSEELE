@@ -3,9 +3,9 @@ package com.xy.seele.application.test;
 import com.xy.seele.application.controller.MyController;
 
 public class main {
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, NoSuchFieldException {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, NoSuchFieldException, IllegalAccessException, InstantiationException {
         Class<?> aClass = Class.forName("com.xy.seele.application.test.Father");
-        Father father=new Father();
+        Father father= (Father) aClass.newInstance();
         Father cast = (Father) aClass.cast(father);
         aClass.getField("SPRING");
         aClass.getMethods();
