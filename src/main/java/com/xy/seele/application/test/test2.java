@@ -1,26 +1,25 @@
 package com.xy.seele.application.test;
 
-public class test2 {
-    public void method(laminter la){
-        la.run("ffd");
-    }
+public class test2 extends Thread{
     public static void main(String[] args) {
         //值传递
         int a=8;
         Son son = new Son();
+        boolean f=son instanceof Father;
         son.setAge(8);
         count(a,son);
-        System.out.println("基本数据类型"+a+"：引用类型"+son.getAge());
+        System.out.println("基本数据类型" +a+"：引用类型"+son.getAge());
         //匿名内部类
         laminter lambda = new laminter() {
-            public void run(String a) {
+            public void run(int a) {
                 System.out.println("test 匿名内部类");
             }
         };
-        lambda.run("fd");
+        lambda.run(a);
         //lambda
-        test2 test = new test2();
-        test.method(s-> System.out.println("lambda"));
+        lambda=b-> System.out.println("lambda");
+        lambda.run(a);
+
 
     }
 
