@@ -4,3 +4,7 @@ spring:
     url: jdbc:mysql://localhost:3306/xy?serverTimezone=GMT%2B8&useSSL=true
     username: root
     password: xin0908yuan
+debug: true
+server:
+  compression:
+    excluded-user-agents:
